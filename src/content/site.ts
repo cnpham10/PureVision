@@ -3,7 +3,7 @@
  * Replace every remaining placeholder before launch.
  */
 export const site = {
-  name: "Purevision",
+  name: "Purevision Contractor",
   description:
     "Placeholder description for a general contractor. Replace this with the real introduction before launch.",
   /**
@@ -12,8 +12,8 @@ export const site = {
    */
   allowIndexing: false,
   copyrightYear: 2026,
-  phone: "Phone number",
-  email: "Email address",
+  phone: "(561) 405-0305",
+  email: "purevisioncontractors@gmail.com",
   serviceArea: "Service area",
   primaryCta: {
     label: "Get a Free Estimate",
