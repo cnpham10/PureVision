@@ -1,8 +1,10 @@
+import type { EstimatorIconName } from "./icons"
+
 export type CardLayout = "text" | "descriptive" | "image" | "compact"
 
 export type SelectionMode = "single" | "multiple"
 
-export type SelectionIcon = "mark"
+export type SelectionIcon = EstimatorIconName
 
 export type SelectionOption = {
   id: string
@@ -41,6 +43,8 @@ export type EstimatorCategory = {
   slug: string
   title: string
   description: string
+  /** Drawn on the service picker. */
+  icon?: EstimatorIconName
   questions: EstimatorQuestion[]
 }
 

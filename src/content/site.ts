@@ -5,16 +5,16 @@
 export const site = {
   name: "Purevision",
   description:
-    "Placeholder description for a general contractor. Replace this with the real introduction before launch.",
+    "Purevision remodels bathrooms and kitchens, and installs flooring, tile, showers, vanities, and countertops. A tub can become a shower, or a shower can become a tub. Describe the project and add photos when you request an estimate.",
   /**
    * Placeholder pages stay out of search indexes.
    * Set this to true only after placeholder content has been replaced.
    */
   allowIndexing: false,
   copyrightYear: 2026,
-  phone: "Phone number",
-  email: "Email address",
-  serviceArea: "Service area",
+  phone: "(561) 405-0305",
+  email: "purevisioncontractors@gmail.com",
+  serviceArea: "Delray Beach",
   primaryCta: {
     label: "Get a Free Estimate",
     href: "/contact",

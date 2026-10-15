@@ -13,7 +13,7 @@ export function SiteFooter() {
       <Container className="grid gap-12 py-16 md:grid-cols-12 md:py-20">
         <div className="md:col-span-5">
           <p className="font-display text-3xl leading-none">{site.name}</p>
-          <p className="mt-4 max-w-sm text-base leading-relaxed text-muted-foreground">
+          <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground">
             {site.description}
           </p>
         </div>
@@ -37,13 +37,21 @@ export function SiteFooter() {
         <div className="md:col-span-4">
           <p className="text-sm text-muted-foreground">Contact</p>
           <ul className="mt-4 space-y-3 text-base">
-            <li>{site.phone}</li>
-            <li>{site.email}</li>
+            <li>
+              <a href="tel:+15614050305" className="hover:text-muted-foreground">
+                {site.phone}
+              </a>
+            </li>
+            <li>
+              <a
+                href={`mailto:${site.email}`}
+                className="break-all hover:text-muted-foreground"
+              >
+                {site.email}
+              </a>
+            </li>
             <li>{site.serviceArea}</li>
           </ul>
-          <p className="mt-4 text-sm text-muted-foreground">
-            Placeholder contact details. Not a working phone number or email address.
-          </p>
         </div>
       </Container>
 
