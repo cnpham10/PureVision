@@ -12,9 +12,18 @@ import {
 } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
 
-const placeholderOptions = [
-  { label: "Placeholder option", value: "placeholder" },
-  { label: "Another placeholder option", value: "placeholder-2" },
+const serviceOptions = [
+  { label: "Bathroom Remodeling", value: "bathroom-remodeling" },
+  { label: "Kitchen Remodeling", value: "kitchen-remodeling" },
+  { label: "Flooring Installation & Replacement", value: "flooring-installation-replacement" },
+  { label: "Shower & Bathtub Remodeling", value: "shower-bathtub-remodeling" },
+  { label: "Vanity & Countertop Installation", value: "vanity-countertop-installation" },
+  { label: "Tile Installation", value: "tile-installation" },
+  {
+    label: "Bathroom Conversion (Tub-to-Shower or Shower-to-Tub)",
+    value: "bathroom-conversion",
+  },
+  { label: "Other", value: "other" },
 ]
 
 export function FormControlPreview() {
@@ -40,13 +49,13 @@ export function FormControlPreview() {
         <Input id="phone" name="phone" type="tel" autoComplete="tel" />
       </Field>
 
-      <Field label="Service of interest" htmlFor="service" hint="Placeholder choices only.">
-        <Select items={placeholderOptions}>
-          <SelectTrigger id="service" aria-describedby="service-hint">
+      <Field label="Service of interest" htmlFor="service">
+        <Select items={serviceOptions} name="service">
+          <SelectTrigger id="service">
             <SelectValue placeholder="Choose an option" />
           </SelectTrigger>
           <SelectContent>
-            {placeholderOptions.map((option) => (
+            {serviceOptions.map((option) => (
               <SelectItem key={option.value} value={option.value}>
                 {option.label}
               </SelectItem>
