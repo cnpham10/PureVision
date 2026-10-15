@@ -13,7 +13,7 @@ export function SiteFooter() {
       <Container className="grid gap-12 py-16 md:grid-cols-12 md:py-20">
         <div className="md:col-span-5">
           <p className="font-display text-3xl leading-none">{site.name}</p>
-          <p className="mt-4 max-w-sm text-base leading-relaxed text-muted-foreground">
+          <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground">
             {site.description}
           </p>
         </div>
@@ -55,22 +55,10 @@ export function SiteFooter() {
         </div>
       </Container>
 
-      <Container className="flex flex-col gap-4 border-t border-border py-6 sm:flex-row sm:items-center sm:justify-between">
+      <Container className="border-t border-border py-6">
         <p className="text-sm text-muted-foreground">
           © {site.copyrightYear} {site.name}
         </p>
-        <ul className="flex gap-6">
-          {site.legal.map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                className="inline-flex min-h-11 items-center text-sm text-muted-foreground hover:text-foreground"
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
       </Container>
     </footer>
   )

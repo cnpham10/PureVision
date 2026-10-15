@@ -9,8 +9,7 @@ export default function Home() {
     <section className="border-b border-border">
       <Container className="grid items-end gap-12 py-20 md:py-28 lg:grid-cols-12 lg:gap-16 lg:py-36">
         <div className="lg:col-span-7">
-          <p className="text-sm text-muted-foreground">Placeholder</p>
-          <h1 className="mt-4 max-w-3xl text-5xl leading-[1.05] md:text-6xl lg:text-7xl">
+          <h1 className="max-w-3xl text-5xl leading-[1.05] md:text-6xl lg:text-7xl">
             The contractor promise belongs here.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
