@@ -13,8 +13,7 @@ export default function EstimatePage() {
   return (
     <Container className="py-20 md:py-28">
       <div className="mx-auto max-w-3xl">
-        <p className="text-sm text-muted-foreground">Placeholder</p>
-        <h1 className="mt-4 text-4xl leading-[1.1] md:text-6xl">
+        <h1 className="text-4xl leading-[1.1] md:text-6xl">
           Get an estimate for your next project.
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
@@ -30,8 +29,7 @@ export default function EstimatePage() {
               href={`/estimate/${category.slug}`}
               className="flex h-full min-h-44 flex-col border border-border p-6 transition-colors duration-200 hover:border-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground motion-reduce:transition-none"
             >
-              <span className="text-sm text-muted-foreground">Placeholder</span>
-              <span className="mt-4 font-display text-3xl leading-tight">
+              <span className="font-display text-3xl leading-tight">
                 {category.title}
               </span>
               <span className="mt-3 text-base leading-relaxed text-muted-foreground">

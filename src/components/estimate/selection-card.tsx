@@ -60,11 +60,7 @@ export function SelectionCard({
               alt={image.alt}
               className="absolute inset-0 h-full w-full object-cover"
             />
-          ) : (
-            <span className="text-sm text-muted-foreground">
-              {image?.alt ?? "Image placeholder"}
-            </span>
-          )}
+          ) : null}
         </span>
       ) : null}
 

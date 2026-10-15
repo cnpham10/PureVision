@@ -37,7 +37,6 @@ export const estimators: EstimatorCategory[] = [
             id: "detail-1",
             title: "Placeholder title",
             description: "Placeholder description for a longer card.",
-            secondaryLabel: "Placeholder label",
           },
           {
             id: "detail-2",
@@ -73,7 +72,6 @@ export const estimators: EstimatorCategory[] = [
             id: "item-1",
             title: "Placeholder item",
             description: "Placeholder description.",
-            secondaryLabel: "Placeholder",
             image: { alt: "Image placeholder" },
           },
           {
