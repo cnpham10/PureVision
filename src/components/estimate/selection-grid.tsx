@@ -6,7 +6,7 @@ const grids: Record<EstimatorQuestion["layout"], string> = {
   text: "grid-cols-1",
   descriptive: "grid-cols-1 sm:grid-cols-2",
   image: "grid-cols-1 sm:grid-cols-2",
-  compact: "grid-cols-2 sm:grid-cols-4",
+  compact: "grid-cols-2 md:grid-cols-4",
 }
 
 export function SelectionGrid({
