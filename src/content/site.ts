@@ -1,10 +1,9 @@
 /**
  * Shared business details and navigation.
- * The repository is named pure-vision. That is not the public business name.
- * Replace every placeholder before launch.
+ * Replace every remaining placeholder before launch.
  */
 export const site = {
-  name: "Business name",
+  name: "Purevision",
   description:
     "Placeholder description for a general contractor. Replace this with the real introduction before launch.",
   /**
