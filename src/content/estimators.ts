@@ -160,19 +160,20 @@ export const estimators: EstimatorCategory[] = [
           {
             id: "essential",
             title: "Essential",
-            description: "Durable standard tile and fixtures that look clean.",
+            description:
+              "Ceramic or standard porcelain tile on the floor and shower walls, a stock vanity, and everyday fixtures.",
           },
           {
             id: "upgraded",
             title: "Upgraded",
             description:
-              "For example porcelain tile, frameless glass and better fixtures.",
+              "Porcelain tile, a quartz or granite vanity top, a glass shower enclosure, and better fixtures.",
           },
           {
             id: "premium",
             title: "Premium",
             description:
-              "For example large-format or natural stone, a custom vanity and designer fixtures.",
+              "Large-format porcelain or natural stone on the floors and walls, a custom vanity, and designer fixtures.",
           },
           { id: "undecided", title: "Not sure yet" },
         ],
@@ -319,19 +320,20 @@ export const estimators: EstimatorCategory[] = [
           {
             id: "essential",
             title: "Essential",
-            description: "Durable standard finishes and appliances.",
+            description:
+              "Laminate or basic quartz counters, a ceramic or standard tile backsplash, and stock cabinet finishes.",
           },
           {
             id: "upgraded",
             title: "Upgraded",
             description:
-              "For example soft-close drawers, better hardware and stainless appliances.",
+              "Quartz or granite counters, a porcelain tile backsplash, soft-close drawers, and better cabinet hardware.",
           },
           {
             id: "premium",
             title: "Premium",
             description:
-              "For example statement stone, panel-ready appliances and designer lighting.",
+              "Quartzite, marble, or another statement stone, large-format or handmade tile, and custom cabinet materials.",
           },
           { id: "undecided", title: "Not sure yet" },
         ],

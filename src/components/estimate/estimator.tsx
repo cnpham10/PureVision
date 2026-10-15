@@ -86,7 +86,7 @@ export function Estimator({ category }: { category: EstimatorCategory }) {
         </p>
         <div className="mt-3 h-px bg-border">
           <div
-            className="h-px bg-foreground motion-reduce:transition-none"
+            className="h-px bg-foreground transition-[width] duration-1000 ease-in-out motion-reduce:transition-none"
             style={{ width: `${(stepNumber / questions.length) * 100}%` }}
           />
         </div>

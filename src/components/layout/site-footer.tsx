@@ -55,10 +55,22 @@ export function SiteFooter() {
         </div>
       </Container>
 
-      <Container className="border-t border-border py-6">
+      <Container className="flex flex-col gap-4 border-t border-border py-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-muted-foreground">
           © {site.copyrightYear} {site.name}
         </p>
+        <ul className="flex gap-6">
+          {site.legal.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className="inline-flex min-h-11 items-center text-sm text-muted-foreground hover:text-foreground"
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </Container>
     </footer>
   )

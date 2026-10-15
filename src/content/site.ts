@@ -29,9 +29,14 @@ export const site = {
     { label: "Estimator", href: "/estimate" },
     { label: "About", href: "/about" },
   ],
+  legal: [
+    { label: "Privacy", href: "/privacy" },
+    { label: "Terms", href: "/terms" },
+  ],
 } as const
 
 export type SiteHref =
   | (typeof site.navigation)[number]["href"]
+  | (typeof site.legal)[number]["href"]
   | typeof site.primaryCta.href
   | "/"
