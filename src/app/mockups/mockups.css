@@ -1,0 +1,195 @@
+/*
+  Shared rules for the projects page mockups.
+  Five type steps only: display, heading, statement, body, small.
+*/
+@layer components {
+.mk {
+  --mk-display: clamp(56px, 10vw, 168px);
+  --mk-heading: clamp(32px, 3.4vw, 48px);
+  --mk-statement: clamp(22px, 2vw, 28px);
+  --mk-body: 17px;
+  --mk-small: 15px;
+  --mk-header: 4rem;
+  --mk-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mk .mk-display {
+  font-family: var(--font-display);
+  font-size: var(--mk-display);
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+
+.mk .mk-heading {
+  font-size: var(--mk-heading);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.mk .mk-statement {
+  font-size: var(--mk-statement);
+  line-height: 1.3;
+}
+
+.mk .mk-body {
+  font-size: var(--mk-body);
+  line-height: 1.55;
+}
+
+.mk .mk-small {
+  font-size: var(--mk-small);
+  line-height: 1.45;
+}
+
+/* Entrances: driven by scroll position, so content is never left hidden without script. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .mk [data-rise] {
+      animation: mk-rise linear both;
+      animation-timeline: view();
+      animation-range: entry calc(var(--i, 0) * 6%) entry calc(45% + var(--i, 0) * 6%);
+    }
+
+    .mk [data-open] {
+      animation: mk-open linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 70%;
+    }
+
+    .mk [data-drift] {
+      animation: mk-drift linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
+    }
+  }
+
+  .mk .mk-press {
+    transition: transform 160ms var(--mk-ease), background-color 200ms var(--mk-ease), color 200ms var(--mk-ease);
+  }
+
+  .mk .mk-press:active {
+    transform: scale(0.97);
+  }
+}
+
+/* First-screen entrance on load: plain CSS, so nothing waits for script. */
+@media (prefers-reduced-motion: no-preference) {
+  .mk [data-enter] {
+    animation: mk-rise 700ms var(--mk-ease) both;
+    animation-delay: calc(var(--i, 0) * 90ms + 120ms);
+  }
+}
+
+@keyframes mk-rise {
+  from {
+    opacity: 0;
+    translate: 0 24px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes mk-open {
+  from {
+    clip-path: inset(0 0 100% 0);
+    scale: 1.12;
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    scale: 1;
+  }
+}
+
+@keyframes mk-drift {
+  from {
+    scale: 1.08;
+  }
+  to {
+    scale: 1;
+  }
+}
+
+/* The before and after slider: the after photo is clipped from the left by --cut. */
+.mk .mk-compare {
+  --cut: 50%;
+  position: relative;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.mk .mk-compare__after {
+  clip-path: inset(0 0 0 var(--cut));
+}
+
+.mk .mk-compare__handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--cut);
+  width: 3px;
+  translate: -50% 0;
+  background: var(--background);
+  pointer-events: none;
+}
+
+.mk .mk-compare__range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+  margin: 0;
+}
+
+.mk .mk-compare:has(.mk-compare__range:focus-visible) {
+  outline: 2px solid var(--foreground);
+  outline-offset: 3px;
+}
+
+/* Flat label laid on a photograph. */
+.mk .mk-tag {
+  position: absolute;
+  bottom: 12px;
+  background: var(--background);
+  color: var(--foreground);
+  padding: 4px 10px;
+  font-size: var(--mk-small);
+  line-height: 1.3;
+}
+
+/*
+  The scroll wipe: the after photo covers the before from the left as the frame
+  moves up the screen. --wipe is set by script; without script both halves show.
+*/
+.mk .mk-wipe {
+  --wipe: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.mk .mk-wipe__after {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 calc(100% - var(--wipe)) 0 0);
+}
+
+.mk .mk-wipe__edge {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--wipe);
+  width: 3px;
+  translate: -50% 0;
+  background: var(--background);
+  pointer-events: none;
+}
+
+.mk .mk-wipe[data-state="before"] .mk-wipe__edge,
+.mk .mk-wipe[data-state="after"] .mk-wipe__edge {
+  opacity: 0;
+}
+}
