@@ -3,9 +3,9 @@
  * Replace every remaining placeholder before launch.
  */
 export const site = {
-  name: "Purevision",
+  name: "Purevision Contractors",
   description:
-    "Purevision remodels bathrooms and kitchens, and installs flooring, tile, showers, vanities, and countertops. A tub can become a shower, or a shower can become a tub. Describe the project and add photos when you request an estimate.",
+    "Purevision Contractors remodels bathrooms and kitchens, and installs flooring, tile, showers, vanities, and countertops. A tub can become a shower, or a shower can become a tub. Describe the project and add photos when you request an estimate.",
   /**
    * Placeholder pages stay out of search indexes.
    * Set this to true only after placeholder content has been replaced.

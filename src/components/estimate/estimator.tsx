@@ -13,6 +13,7 @@ import {
   toggleOption,
   visibleQuestions,
 } from "@/lib/estimator/flow"
+import { formatPriceRange, priceBathroomAnswers } from "@/lib/estimator/pricing"
 
 export function Estimator({ category }: { category: EstimatorCategory }) {
   const [answers, setAnswers] = useState<Answers>({})
@@ -151,14 +152,27 @@ function Result({
   onRevise: () => void
 }) {
   const questions = visibleQuestions(category, answers)
+  const range = category.slug === "bathroom" ? priceBathroomAnswers(answers) : null
 
   return (
     <div className="mx-auto w-full max-w-3xl">
       <h1 className="text-4xl leading-tight md:text-5xl">Your selections</h1>
-      <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted-foreground">
-        A preliminary price range will appear here after pricing rules are
-        supplied. This is not a quote.
-      </p>
+      {range ? (
+        <div className="mt-6">
+          <p className="text-4xl leading-tight tabular-nums md:text-5xl">
+            {formatPriceRange(range)}
+          </p>
+          <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted-foreground">
+            About {range.weeks} weeks once materials are in. This covers the work
+            and basic materials. It is not a quote.
+          </p>
+        </div>
+      ) : (
+        <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted-foreground">
+          A preliminary price range is not available for this project yet. This
+          is not a quote.
+        </p>
+      )}
 
       <ul className="mt-10 divide-y divide-border border-y border-border">
         {questions.map((question) => {

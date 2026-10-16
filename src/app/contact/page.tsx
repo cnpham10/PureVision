@@ -5,7 +5,7 @@ import { PlaceholderPage } from "@/components/layout/placeholder-page"
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Request a detailed estimate. Share the project details and photos, and the request is saved as a lead.",
+    "Request a detailed estimate. Share the project details and photos, and an expert will contact you for a more detailed estimate.",
 }
 
 export default function ContactPage() {
@@ -13,7 +13,7 @@ export default function ContactPage() {
     <PlaceholderPage
       eyebrow={false}
       title="Request a detailed estimate"
-      description="Share the project details and any photos. Submitting this form creates an estimate request."
+      description="Share the project details and any photos. An expert will contact you for a more detailed estimate."
     >
       <FormControlPreview />
     </PlaceholderPage>

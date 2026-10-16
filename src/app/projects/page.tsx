@@ -48,10 +48,6 @@ export default function ProjectsPage() {
             Rooms we rebuilt
           </h1>
           <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
-            <p className={cn("max-w-[46ch] text-[17px] leading-[1.55] motion-safe:[--tw-animation-delay:90ms]", enter)}>
-              Bathrooms and kitchens {site.name} rebuilt. Each room holds still as it was; keep
-              scrolling and it turns into the finished room.
-            </p>
             <Link
               href="/estimate"
               className={cn(buttonVariants({ size: "lg" }), "self-start motion-safe:[--tw-animation-delay:180ms]", enter)}
@@ -64,15 +60,9 @@ export default function ProjectsPage() {
 
       {/* The work: one grid, one rhythm. */}
       <section className="px-5 pt-[14vh] pb-[16vh] sm:px-8" aria-labelledby="work-heading">
-        <div className="grid grid-cols-1 gap-x-6 md:grid-cols-12">
-          <h2 id="work-heading" className="text-[clamp(32px,3.4vw,48px)] leading-[1.02] tracking-[-0.03em] md:col-span-6">
-            The work
-          </h2>
-          <p className="mt-4 max-w-[46ch] text-[17px] leading-[1.55] md:col-span-6 md:mt-0 md:self-end">
-            {projects.length} finished rooms so far, each shown before and after. More jobs are added
-            as they are photographed.
-          </p>
-        </div>
+        <h2 id="work-heading" className="text-[clamp(32px,3.4vw,48px)] leading-[1.02] tracking-[-0.03em]">
+          The work
+        </h2>
         <ProjectGrid projects={projects} />
       </section>
 

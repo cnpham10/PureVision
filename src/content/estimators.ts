@@ -104,7 +104,7 @@ export const estimators: EstimatorCategory[] = [
           { id: "guest", title: "Guest or hall bath" },
           {
             id: "half",
-            title: "Powder room",
+            title: "Half bath",
             description: "No shower or tub",
           },
           {

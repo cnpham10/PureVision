@@ -158,8 +158,8 @@ export function FormControlPreview() {
     return (
       <div className="mt-14 flex max-w-xl flex-col gap-6" role="status">
         <p className="text-lg leading-relaxed">
-          Your estimate request was sent. We will follow up using the contact details you
-          provided.
+          Your estimate request was sent. An expert will contact you for a more detailed
+          estimate.
         </p>
         <Button type="button" variant="outline" onClick={() => setStatus("idle")}>
           Send another request

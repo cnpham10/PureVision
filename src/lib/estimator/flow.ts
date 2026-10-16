@@ -6,7 +6,7 @@ import type {
 
 /**
  * Answers live in component state for the current visit.
- * They are not written to browser storage, and this module does not calculate prices.
+ * They are not written to browser storage. Prices are calculated in pricing.ts.
  */
 
 export function isQuestionVisible(

@@ -1,6 +1,6 @@
 # pure-vision
 
-Lead-generation website for Purevision, a general contractor. Services and project details are still placeholders.
+Lead-generation website for Purevision Contractors. Services and project details are still placeholders.
 
 ## Local development
 

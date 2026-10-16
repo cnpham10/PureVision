@@ -10,12 +10,12 @@ export default function Home() {
       <Container className="grid items-end gap-12 py-20 md:py-28 lg:grid-cols-12 lg:gap-16 lg:py-36">
         <div className="lg:col-span-7">
           <h1 className="max-w-3xl text-5xl leading-[1.05] md:text-6xl lg:text-7xl">
-            Your Vision.
+            Purely Your Vision.
             <span className="mt-2 block">Our Craftsmanship.</span>
           </h1>
           <div className="mt-6 max-w-xl space-y-4 text-lg leading-relaxed text-muted-foreground">
             <p>
-              Purevision remodels bathrooms and kitchens in Delray Beach. You
+              Purevision Contractors remodels bathrooms and kitchens in Delray Beach. You
               describe the room you want. We build it, from the first layout to
               the last finish.
             </p>

@@ -7,7 +7,7 @@ import { PageHeader } from "@/components/layout/page-header"
 export const metadata: Metadata = {
   title: "Terms",
   description:
-    "How to use the Purevision site, what an estimate request means, and what the online questions do not promise.",
+    "How to use the Purevision Contractors site, what an estimate request means, and what the online questions do not promise.",
 }
 
 export default function TermsPage() {
@@ -47,11 +47,11 @@ export default function TermsPage() {
         <section className="space-y-3">
           <h2 className="text-3xl leading-tight">Online questions</h2>
           <p>
-            The bathroom and kitchen questions help us understand the project. They do not
-            calculate a price, and the answers are a draft of the conversation, not a promise
-            about materials, timing, or how the work will be done. Finish choices such as
-            standard tile, stone, and fixtures describe a direction. The materials for a job are
-            confirmed in the written estimate.
+            The bathroom and kitchen questions help us understand the project. A bathroom
+            answer can show a preliminary price range. That range is not a quote, and the
+            answers are a draft of the conversation, not a promise about materials, timing, or
+            how the work will be done. Finish choices such as standard tile, stone, and fixtures
+            describe a direction. The materials for a job are confirmed in the written estimate.
           </p>
         </section>
 

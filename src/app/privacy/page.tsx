@@ -7,7 +7,7 @@ import { PageHeader } from "@/components/layout/page-header"
 export const metadata: Metadata = {
   title: "Privacy",
   description:
-    "How Purevision collects and uses estimate requests, contact details, and project photos.",
+    "How Purevision Contractors collects and uses estimate requests, contact details, and project photos.",
 }
 
 export default function PrivacyPage() {
@@ -15,7 +15,7 @@ export default function PrivacyPage() {
     <Container className="py-20 md:py-28">
       <PageHeader
         title="Privacy"
-        description="This page explains what Purevision collects when you use the site, and how to reach us about that information."
+        description="This page explains what Purevision Contractors collects when you use the site, and how to reach us about that information."
       />
 
       <div className="mt-14 max-w-3xl space-y-10 text-base leading-relaxed">

@@ -6,7 +6,7 @@ import { ServicePicker } from "@/components/estimate/service-picker"
 export const metadata: Metadata = {
   title: "Estimate",
   description:
-    "Answer a few questions about a bathroom or kitchen remodel. Draft estimator: price ranges are not available until pricing rules are supplied.",
+    "Answer a few questions about a bathroom or kitchen remodel. A bathroom answer produces a preliminary range, not a quote.",
 }
 
 export default function EstimatePage() {
@@ -20,8 +20,7 @@ export default function EstimatePage() {
           Choose the room and answer a few quick questions.
         </p>
         <p className="mt-2 max-w-2xl text-base leading-relaxed text-muted-foreground">
-          Draft: the services and questions are still to be confirmed, and price
-          ranges will appear once pricing rules are supplied.
+          A bathroom answer produces a preliminary range. It is not a quote.
         </p>
       </div>
 
