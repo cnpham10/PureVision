@@ -1,14 +1,16 @@
+import { cn } from "cn"
+
 /**
  * The header mark, drawn as strokes on load, then settled into the solid logo.
  * People who ask for reduced motion see the finished mark immediately.
  */
-export function LogoMark() {
+export function LogoMark({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 202 261"
       width={31}
       height={40}
-      className="logo-mark h-10 w-auto shrink-0"
+      className={cn("logo-mark h-10 w-auto shrink-0", className)}
       aria-hidden="true"
     >
       <g

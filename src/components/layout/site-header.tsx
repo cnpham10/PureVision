@@ -19,6 +19,10 @@ const navDelay = [
   "motion-safe:[--tw-animation-delay:360ms]",
 ]
 
+/** Focus ring for links and buttons on the charcoal header. */
+const onDarkFocus =
+  "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-background"
+
 function isCurrent(pathname: string | null, href: string) {
   if (!pathname) {
     return false
@@ -48,15 +52,17 @@ function HeaderContents({ pathname }: { pathname: string | null }) {
   }, [open])
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background">
-      <Container className="flex h-16 items-center justify-between gap-6 overflow-hidden">
+    <header className="sticky top-0 z-40 bg-foreground text-background">
+      <Container className="flex h-16 items-center justify-between gap-4 overflow-hidden min-[360px]:gap-6">
         <Link
           href="/"
-          className="inline-flex min-w-0 items-center gap-2.5 text-base text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
+          className={cn("inline-flex min-w-0 items-center gap-2.5", onDarkFocus)}
           aria-current={pathname === "/" ? "page" : undefined}
         >
-          <LogoMark />
-          <span className="truncate">{site.name}</span>
+          <LogoMark className="h-9 sm:h-10" />
+          <span className="truncate font-display text-base leading-none tracking-[-0.02em] min-[360px]:text-[19px] sm:text-[22px]">
+            {site.name}
+          </span>
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
@@ -68,10 +74,13 @@ function HeaderContents({ pathname }: { pathname: string | null }) {
                 href={item.href}
                 aria-current={current ? "page" : undefined}
                 className={cn(
-                  "inline-flex min-h-11 items-center text-base transition-colors hover:text-foreground motion-reduce:transition-none",
+                  "inline-flex min-h-11 items-center text-base transition-colors hover:text-background motion-reduce:transition-none",
                   navEnter,
                   navDelay[index],
-                  current ? "text-foreground" : "text-muted-foreground",
+                  onDarkFocus,
+                  current
+                    ? "text-background underline decoration-brand decoration-2 underline-offset-8"
+                    : "text-background/70",
                 )}
               >
                 {item.label}
@@ -82,7 +91,10 @@ function HeaderContents({ pathname }: { pathname: string | null }) {
 
         <Link
           href={site.primaryCta.href}
-          className={cn(buttonVariants(), "hidden lg:inline-flex")}
+          className={cn(
+            buttonVariants(),
+            "hidden focus-visible:outline-background active:scale-[0.98] lg:inline-flex",
+          )}
         >
           {site.primaryCta.label}
         </Link>
@@ -90,7 +102,7 @@ function HeaderContents({ pathname }: { pathname: string | null }) {
         <Button
           type="button"
           variant="outline"
-          className="lg:hidden"
+          className="border-background/45 text-background hover:border-background focus-visible:outline-background lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-navigation"
           onClick={() => setOpenKey(open ? null : menuKey)}
@@ -103,7 +115,7 @@ function HeaderContents({ pathname }: { pathname: string | null }) {
         <nav
           id="mobile-navigation"
           aria-label="Mobile"
-          className="border-t border-border lg:hidden"
+          className="bg-[color-mix(in_oklab,var(--foreground)_90%,var(--background))] lg:hidden"
         >
           <Container className="flex flex-col py-3">
             {site.navigation.map((item) => {
@@ -115,7 +127,8 @@ function HeaderContents({ pathname }: { pathname: string | null }) {
                   aria-current={current ? "page" : undefined}
                   className={cn(
                     "inline-flex min-h-12 items-center text-lg",
-                    current ? "text-foreground" : "text-muted-foreground",
+                    onDarkFocus,
+                    current ? "text-background" : "text-background/70",
                   )}
                 >
                   {item.label}
@@ -124,7 +137,10 @@ function HeaderContents({ pathname }: { pathname: string | null }) {
             })}
             <Link
               href={site.primaryCta.href}
-              className={cn(buttonVariants({ size: "lg" }), "mt-3 w-full")}
+              className={cn(
+                buttonVariants({ size: "lg" }),
+                "mt-3 w-full focus-visible:outline-background",
+              )}
             >
               {site.primaryCta.label}
             </Link>
