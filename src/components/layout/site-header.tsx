@@ -6,7 +6,18 @@ import { usePathname } from "next/navigation"
 import { site } from "@/content/site"
 import { Button, buttonVariants } from "@/components/ui/button"
 import { Container } from "@/components/layout/container"
+import { LogoMark } from "@/components/layout/logo-mark"
 import { cn } from "cn"
+
+const navEnter =
+  "motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-top-2 motion-safe:[animation-duration:1.4s] motion-safe:fill-mode-both motion-safe:ease-in-out"
+
+const navDelay = [
+  "",
+  "motion-safe:[--tw-animation-delay:120ms]",
+  "motion-safe:[--tw-animation-delay:240ms]",
+  "motion-safe:[--tw-animation-delay:360ms]",
+]
 
 function isCurrent(pathname: string | null, href: string) {
   if (!pathname) {
@@ -38,24 +49,18 @@ function HeaderContents({ pathname }: { pathname: string | null }) {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background">
-      <Container className="flex h-16 items-center justify-between gap-6">
+      <Container className="flex h-16 items-center justify-between gap-6 overflow-hidden">
         <Link
           href="/"
           className="inline-flex min-w-0 items-center gap-2.5 text-base text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
           aria-current={pathname === "/" ? "page" : undefined}
         >
-          <img
-            src="/logo.png"
-            alt=""
-            width={31}
-            height={40}
-            className="h-10 w-auto shrink-0"
-          />
+          <LogoMark />
           <span className="truncate">{site.name}</span>
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
-          {site.navigation.map((item) => {
+          {site.navigation.map((item, index) => {
             const current = isCurrent(pathname, item.href)
             return (
               <Link
@@ -64,6 +69,8 @@ function HeaderContents({ pathname }: { pathname: string | null }) {
                 aria-current={current ? "page" : undefined}
                 className={cn(
                   "inline-flex min-h-11 items-center text-base transition-colors hover:text-foreground motion-reduce:transition-none",
+                  navEnter,
+                  navDelay[index],
                   current ? "text-foreground" : "text-muted-foreground",
                 )}
               >

@@ -20,7 +20,7 @@ const closing = getProject("open-white-kitchen")!
  * Stagger with --tw-animation-delay, not delay-*, which would also delay hover transitions.
  */
 const enter =
-  "motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-6 motion-safe:animation-duration-700 motion-safe:fill-mode-both motion-safe:ease-out"
+  "motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 motion-safe:[animation-duration:1.4s] motion-safe:fill-mode-both motion-safe:ease-in-out"
 
 export default function ProjectsPage() {
   return (
@@ -50,7 +50,7 @@ export default function ProjectsPage() {
           <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
             <Link
               href="/estimate"
-              className={cn(buttonVariants({ size: "lg" }), "self-start motion-safe:[--tw-animation-delay:180ms]", enter)}
+              className={cn(buttonVariants({ size: "lg" }), "self-start motion-safe:[--tw-animation-delay:360ms]", enter)}
             >
               Estimate your project
             </Link>
@@ -58,11 +58,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* The work: one grid, one rhythm. */}
-      <section className="px-5 pt-[14vh] pb-[16vh] sm:px-8" aria-labelledby="work-heading">
-        <h2 id="work-heading" className="text-[clamp(32px,3.4vw,48px)] leading-[1.02] tracking-[-0.03em]">
-          The work
-        </h2>
+      <section className="px-5 pt-[14vh] pb-[16vh] sm:px-8">
         <ProjectGrid projects={projects} />
       </section>
 
