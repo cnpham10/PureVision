@@ -4,6 +4,8 @@
  */
 export const site = {
   name: "Purevision Contractors",
+  /** The registered company, for the copyright line. */
+  legalName: "Purevision Contractors, LLC",
   description:
     "Purevision Contractors remodels bathrooms and kitchens, and installs flooring, tile, showers, vanities, and countertops. A tub can become a shower, or a shower can become a tub. Describe the project and add photos when you request an estimate.",
   /**
