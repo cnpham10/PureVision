@@ -41,10 +41,17 @@ function HeaderContents({ pathname }: { pathname: string | null }) {
       <Container className="flex h-16 items-center justify-between gap-6">
         <Link
           href="/"
-          className="text-base text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
+          className="inline-flex min-w-0 items-center gap-2.5 text-base text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
           aria-current={pathname === "/" ? "page" : undefined}
         >
-          {site.name}
+          <img
+            src="/logo.png"
+            alt=""
+            width={31}
+            height={40}
+            className="h-10 w-auto shrink-0"
+          />
+          <span className="truncate">{site.name}</span>
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
