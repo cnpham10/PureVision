@@ -5,12 +5,25 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
+  A local serif sized to Boska's measurements, used until Boska arrives,
+  so headings keep their line breaks when the real font swaps in.
+*/
+@font-face {
+  font-family: "Boska Fallback";
+  src: local("Palatino Linotype"), local("Georgia");
+  size-adjust: 89%;
+  ascent-override: 105.3%;
+  descent-override: 27.4%;
+  line-gap-override: 0%;
+}
+
+/*
   Change the brand accent in one place.
   Filled buttons use --brand. The label stays charcoal so it stays readable on #8dabc3.
 */
 @theme inline {
   --font-sans: "Switzer", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Boska", "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+  --font-display: "Boska", "Boska Fallback", "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
   --color-brand-hover: var(--brand-hover);
