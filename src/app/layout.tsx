@@ -22,9 +22,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <head>
         <link rel="preconnect" href="https://api.fontshare.com" />
         <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
+        {/*
+          One stylesheet per family: asked for both in one request, Fontshare
+          returns Switzer only and the headings fall back to Georgia.
+        */}
         <link
           rel="stylesheet"
-          href="https://api.fontshare.com/v2/css?f%5B%5D=switzer@400&f%5B%5D=boska@500&display=swap"
+          href="https://api.fontshare.com/v2/css?f%5B%5D=switzer@400&display=swap"
+        />
+        <link
+          rel="stylesheet"
+          href="https://api.fontshare.com/v2/css?f%5B%5D=boska@500&display=swap"
         />
       </head>
       <body className="flex min-h-dvh flex-col">
